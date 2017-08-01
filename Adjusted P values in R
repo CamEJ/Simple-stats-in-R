@@ -32,6 +32,9 @@ FDR = p.adjust(pvals, "fdr") # and least conservative false discovery rate
 # can read about each of these methods to decide which is best for your data/ you are comfortable with
 
 res = cbind(pvals, FDR=round(FDR, 3), BONF=round(BONF, 3), HOLM=round(HOLM,3)) # make these strings into a table of combined data
+
+# note: if you want more that 3 decimal places then change 3 above to 4 or whatever
+
 res # print to check
 
 
