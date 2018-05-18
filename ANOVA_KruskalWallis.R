@@ -1,9 +1,12 @@
 # Single factor analysis of variance (ANOVA or Kruskal Wallis) 
 
 # for when you are testing if there are differences in your data 
-# resulting from ONE treatment (aka factor) - eg does the number
+# resulting from ONE treatment (aka factor) with 3 or more levels 
+# if there are only two levels, just do a t-test
+# in other words; for example does the number
 # of flies differ significantly as a function of month? 
-# *If you are trying to check for multiple factors then should consider regression and 
+# *If you are trying to check for multiple factors (as a function of month and number
+# of spiders; then should consider regression and/or correlation
 
 # uses the base function aov()
 # which takes form:
@@ -67,6 +70,6 @@ dunn.test(NumberBacteria ~ Treatment, method="bh") # run
           # where bh means benjamini hochberg
           # read up and choose method as appropriate 
           
-          
+          # . https://cran.r-project.org/doc/contrib/Martinez-RforBiologistv1.1.pdf
 
 
