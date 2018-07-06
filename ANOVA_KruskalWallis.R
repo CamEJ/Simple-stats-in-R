@@ -49,6 +49,11 @@ TukeyHSD(result.aov)
 # Here's one, using Shapiro–Wilk test:
 
 tapply(NumberBacteria, INDEX=Treatment, FUN=shapiro.test)
+
+# if running above way brings error then try as follows
+
+tapply(X = MyDataFrame$NumberBacteria, INDEX=list(MyDataFrame$Treatment), FUN=shapiro.test)
+
 # the output tests normality of data from each of my factors in Treatment 
 # if all p values > 0.01 then data is normal and do ANOVA and Tukey as above
 # if one or more p values are <0.05 then not all data is normal and 
