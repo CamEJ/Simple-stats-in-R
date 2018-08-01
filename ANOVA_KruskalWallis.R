@@ -70,7 +70,7 @@ kruskal.test(MyDataFrame$NumberBacteria ~ MyDataFrame$Treatment) # run test
 
 library(dunn.test) # load package
 
-dunn.test(NumberBacteria ~ Treatment, method="bh") # run
+dunn.test(NumberBacteria, Treatment, method="bh") # run
           
           # where bh means benjamini hochberg
           # read up and choose method as appropriate 
