@@ -71,9 +71,15 @@ kruskal.test(MyDataFrame$NumberBacteria ~ MyDataFrame$Treatment) # run test
 library(dunn.test) # load package
 
 dunn.test(NumberBacteria, Treatment, method="bh") # run
-          
           # where bh means benjamini hochberg
-          # read up and choose method as appropriate 
+          # read up and choose method as appropriate
+
+# if you want to read out result from dunn.test () more nicely can do following:
+
+result = dunn.test(NumberBacteria, Treatment, method="bh") # run
+result = cbind.data.frame(result$comparisons,result$Z,result$P.adjusted)
+result[order(result$`result$P.adjusted`),]
+
           
           # . https://cran.r-project.org/doc/contrib/Martinez-RforBiologistv1.1.pdf
 
